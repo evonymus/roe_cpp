@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExchangeRatesSeries xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Table>A</Table>
+    <Currency>funt szterling</Currency>
+    <Code>GBP</Code>
+    <Rates>
+        <Rate>
+            <No>022/A/NBP/2016</No>
+            <EffectiveDate>2016-02-03</EffectiveDate>
+            <Mid>5.8291</Mid>
+        </Rate>
+    </Rates>
+</ExchangeRatesSeries>

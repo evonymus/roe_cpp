@@ -4,7 +4,7 @@
 #ifndef _HTTPDOWNLOADER_H
 #define _HTTPDOWNLOADER_H
 #include <string>
-
+namespace roe { 
 class HTTPDownloader {
 public:
     HTTPDownloader ();
@@ -12,7 +12,7 @@ public:
 
     std::string download(const std::string& url);
 private:
-    void* curl;
+    void* curl_;
 };
-
+}
 #endif

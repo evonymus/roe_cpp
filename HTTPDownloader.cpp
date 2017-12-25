@@ -3,33 +3,34 @@
 #include <sstream>
 #include <iostream>
 
-using namespace std;
 
 static size_t write_data(void* ptr
         , size_t size
         , size_t nmemb
         , void* stream) {
-    string data((const char*) ptr, (size_t) size * nmemb);
-    *((std::stringstream*) stream) << data << endl;
+   std::string data((const char*) ptr
+          , (size_t) size * nmemb);
+    
+    *((std::stringstream*) stream) << data << std::endl;
     return size * nmemb;
 }
 
-HTTPDownloader::HTTPDownloader() {
-    curl = curl_easy_init();
+roe::HTTPDownloader::HTTPDownloader() {
+    curl_ = curl_easy_init();
 }
 
-HTTPDownloader::~HTTPDownloader() {
-    curl_easy_cleanup(curl);
+roe::HTTPDownloader::~HTTPDownloader() {
+    curl_easy_cleanup(curl_);
 }
 
-std::string HTTPDownloader::download(const std::string& url) {
+std::string roe::HTTPDownloader::download(const std::string& url) {
     std::stringstream out;
 
-    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &out);
+    curl_easy_setopt(curl_, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl_, CURLOPT_WRITEFUNCTION, write_data);
+    curl_easy_setopt(curl_, CURLOPT_WRITEDATA, &out);
 
-    CURLcode res = curl_easy_perform(curl);
+    CURLcode res = curl_easy_perform(curl_);
     /* check for errors*/
     if (res != CURLE_OK) {
         std::cout << "An error occured: \n"; 

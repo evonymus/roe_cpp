@@ -2,10 +2,12 @@
 #define _CURRENCY_ 
 #include <string>
 namespace roe {
+/*!
+ * class currency: stores information on a single currency
+ */
 class Currency
 {
 public:
-    Currency();
     Currency (std::string name, std::string code, double value);
     virtual ~Currency ();
 
@@ -15,9 +17,9 @@ public:
 
 protected:
     /* data */
-    std::string _name;
-    std::string _code;
-    double _value;
+    std::string name_;
+    std::string code_;
+    double value_;
     
 };
 }

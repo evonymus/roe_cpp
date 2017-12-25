@@ -1,16 +1,14 @@
+/*!
+ * definition of the Currency class
+ * */
 #include "currency.h"
-using namespace std;
 
-roe::Currency::Currency() {
-    _name  = "";
-    _code  = "";
-    _value = 0.0;
-}
-
-roe::Currency::Currency(std::string name, std::string code, double value) {
-    _name  = name;
-    _code  = code;
-    _value = value;
+roe::Currency::Currency(std::string name
+      , std::string code
+      , double value) {
+    name_  = name;
+    code_  = code;
+    value_ = value;
 }
 
 roe::Currency::~Currency() {
@@ -18,13 +16,13 @@ roe::Currency::~Currency() {
 }
 
 std::string roe::Currency::getName() const {
-    return _name;
+    return name_;
 }
 
  std::string roe::Currency::getCode() const {
-    return _code;
+    return code_;
 }
 
  double roe::Currency::getValue() const {
-    return _value;
+    return value_;
 }

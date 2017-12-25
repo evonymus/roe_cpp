@@ -7,7 +7,9 @@ class Table
 {
 public:
     Table();
-    Table (std::string tableType, std::string tableNumber, std::string date);
+    Table (std::string tableType
+          , std::string tableNumber
+          , std::string date);
     virtual ~Table ();
      std::string getTableType() const ;
      std::string getTableNumber() const;

@@ -19,7 +19,8 @@ static const char* kTypeNames[] =
  *  Function takes the number of arguments and the return appropriate url  *
  ***************************************************************************/
 
-std::string getUrl(const int argc,  char* const argv[], const char* format="json") {
+std::string getUrl(const int argc
+      ,  char* const argv[], const char* format="json") {
     switch(argc) {
         case 1: return HOST + "/tables/a/?format=" + format ;
                 break;
